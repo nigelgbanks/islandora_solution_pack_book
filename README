@@ -1,0 +1,73 @@
+
+CONTENTS OF THIS FILE
+---------------------
+
+ * summary
+ * requirements
+ * installation
+ * configuration
+ * customization
+ * troubleshooting
+ * faq
+ * contact
+ * sponsors
+
+
+SUMMARY
+-------
+
+Book Solution Pack
+
+
+REQUIREMENTS
+------------
+
+Tesseract:
+http://code.google.com/p/tesseract-ocr/
+
+INSTALLATION
+------------
+
+Tesseract:
+
+Tesseract is an OCR engine that was developed at HP Labs between 1985 and 1995
+it is currently being developed at Google. Recognized as one of the most
+accurate open source OCR engines available, Tesseract will read binary, grey, or
+colour images and output text.
+
+A TIFF reader that will read uncompressed TIFF images is also included.
+Islandora Book Solution Pack currently uses Tesseract version 3.0, which can be
+obtained from the project home page.
+
+http://code.google.com/p/tesseract-ocr/
+
+Installation will differ depending on your operating system; please see the
+README Wiki for detailed instructions.
+
+http://code.google.com/p/tesseract-ocr/wiki/ReadMe
+
+Automatic page orientation detection was added in Tesseract 3.01.
+For more information, see the Tesseract Project Home.
+
+CONFIGURATION
+-------------
+
+
+CUSTOMIZATION
+-------------
+
+
+TROUBLESHOOTING
+---------------
+
+
+F.A.Q.
+------
+
+
+CONTACT
+-------
+
+
+SPONSORS
+--------
