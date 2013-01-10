@@ -220,7 +220,7 @@ function islandora_book_islandora_required_objects(IslandoraTuque $connection) {
   $datastream = $page_content_model->constructDatastream('DS-COMPOSITE-MODEL', 'M');
   $datastream->label = 'DS-COMPOSITE-MODEL';
   $datastream->mimetype = 'text/xml';
-  $datastream->setContentFromFile("$datastreams_path/data/datastreams/islandora_pageCModel_ds_composite_model.xml", FALSE);
+  $datastream->setContentFromFile("$datastreams_path/islandora_pageCModel_ds_composite_model.xml", FALSE);
   $page_content_model->ingestDatastream($datastream);
   // Book Content Model
   $book_content_model = $connection->repository->constructObject('islandora:bookCModel');
@@ -231,7 +231,7 @@ function islandora_book_islandora_required_objects(IslandoraTuque $connection) {
   $datastream = $book_content_model->constructDatastream('DS-COMPOSITE-MODEL', 'M');
   $datastream->label = 'DS-COMPOSITE-MODEL';
   $datastream->mimetype = 'text/xml';
-  $datastream->setContentFromFile("$datastreams_path/xml/islandora_bookCModel_ds_composite_model.xml", FALSE);
+  $datastream->setContentFromFile("$datastreams_path/islandora_bookCModel_ds_composite_model.xml", FALSE);
   $book_content_model->ingestDatastream($datastream);
   // Book Collection
   $book_collection = $connection->repository->constructObject('islandora:bookCollection');
@@ -243,7 +243,7 @@ function islandora_book_islandora_required_objects(IslandoraTuque $connection) {
   $datastream = $book_collection->constructDatastream('COLLECTION_POLICY', 'M');
   $datastream->label = 'COLLECTION_POLICY';
   $datastream->mimetype = 'text/xml';
-  $datastream->setContentFromFile("$datastreams_path/xml/islandora_book_collection_policy.xml", FALSE);
+  $datastream->setContentFromFile("$datastreams_path/islandora_book_collection_policy.xml", FALSE);
   $book_collection->ingestDatastream($datastream);
   // TN Datastream
   $datastream = $book_collection->constructDatastream('TN', 'M');
