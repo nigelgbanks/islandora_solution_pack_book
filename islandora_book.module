@@ -199,8 +199,8 @@ function islandora_book_islandora_xml_form_builder_form_associations() {
 function islandora_book_islandora_xml_form_builder_forms() {
   $module_path = drupal_get_path('module', 'islandora_book');
   return array(
-    'Islandora Book MODS form' => array(
-      'form_file' => "$module_path/data/forms/book_mods_form.xml",
+    'Islandora Book MODS Form' => array(
+      'form_file' => "$module_path/data/forms/book_form_mods.xml",
     ),
   );
 }
