@@ -64,10 +64,10 @@ function islandora_book_upload_page_form(array $form, array &$form_state) {
 function islandora_book_upload_page_form_submit(array $form, array &$form_state) {
   module_load_include('inc', 'islandora_book', 'includes/utilities');
   $object = islandora_ingest_form_get_object($form_state);
-  $file = file_load($form_state['values']['file'])->filename;
-  $object->label = $file;
-  islandora_book_update_datastream($object, $file, 'OBJ');
-  file_managed_delete($file);
+  $file = file_load($form_state['values']['file']);
+  $object->label = $file->filename;
+  islandora_book_update_datastream($object, drupal_realpath($file->uri), 'OBJ');
+  file_delete($file);
   // Update RELS-EXT properties, page/sequence/etc, and append the page at the
   // end of the book.
   $rels_ext = $object->relationships;
