@@ -89,7 +89,7 @@ function islandora_book_manage_book_menu(FedoraObject $object) {
       ),
       'delete' => array(
         // @todo Replace with check for permission.
-        '#access' => user_access(PERM_ISLANDORA_BOOK_MANAGE_BOOK_DELETE),
+        '#access' => user_access(PERM_ISLANDORA_BOOK_DELETE_PAGES),
         '#title' => t('Delete Pages'),
         '#type' => 'fieldset',
         'form' => drupal_get_form('islandora_book_manage_book_delete_form', $object),
