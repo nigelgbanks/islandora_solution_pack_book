@@ -17,9 +17,7 @@
  */
 function islandora_book_upload_page_form(array $form, array &$form_state) {
   module_load_include('inc', 'islandora_book', 'includes/utilities');
-  $get_default_value = function($name, $default) use($form_state) {
-    return isset($form_state['values'][$name]) ? $form_state['values'][$name] : $default;
-  };
+
   $upload_size = min((int)ini_get('post_max_size'), (int)ini_get('upload_max_filesize'));
   $extensions = array('tiff tif');
   $can_preprocess = islandora_book_can_preprocess_ocr();
@@ -29,7 +27,7 @@ function islandora_book_upload_page_form(array $form, array &$form_state) {
       '#title' => t('Page'),
       '#type' => 'managed_file',
       '#description' => t('Select page images to upload.<br/>Files must be less than <b>!size MB.</b><br/>Allowed file types: <b>!ext.</b>', array('!size' => $upload_size, '!ext' => $extensions[0])),
-      '#default_value' => $get_default_value('files', NULL),
+      '#default_value' => isset($form_state['values']['file']) ? $form_state['values']['file'] : NULL,
       '#upload_location' => 'temporary://',
       '#required' => TRUE,
       '#upload_validators' => array(
@@ -42,14 +40,14 @@ function islandora_book_upload_page_form(array $form, array &$form_state) {
       '#type' => 'select',
       '#description' => t('Please select the language that the page is written in.'),
       '#options' => $languages,
-      '#default_value' => $get_default_value('language', NULL),
+      '#default_value' => isset($form_state['values']['language']) ? $form_state['values']['language'] : NULL,
      ),
     'preprocess' => array(
       '#disabled' => !$can_preprocess,
       '#title' => t('Preprocessing for typescripts?'),
       '#type' => 'checkbox',
       '#description' => t('Will add additional processing for typewritten text. This script grayscales and sharpens the archival TIFF before performing OCR processes.<br/>This has been shown to improve OCR results for some images. Use with caution. Process can be lengthly and is resource intensive.<br/>'),
-      '#default_value' => $get_default_value('preprocess', $can_preprocess),
+      '#default_value' => isset($form_state['values']['preprocess']) ? $form_state['values']['preprocess'] : $can_preprocess,
     )
   );
 }
