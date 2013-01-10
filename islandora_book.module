@@ -287,9 +287,9 @@ function islandora_book_islandora_pagecmodel_islandora_ingest_steps() {
     'islandora_book_upload_pages' => array(
       'weight' => 10,
       'type' => 'form',
-      'form_id' => 'islandora_book_upload_pages_form',
+      'form_id' => 'islandora_book_upload_page_form',
       'module' => 'islandora_book',
-      'file' => 'includes/upload_pages.form.inc'
+      'file' => 'includes/upload_page.form.inc'
     )
   );
 }
