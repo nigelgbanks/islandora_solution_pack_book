@@ -168,7 +168,7 @@ function islandora_book_create_pdf_page_batch_operation(array $pages, array $opt
 }
 
 /**
- * Batch operation for combinding PDF files.
+ * Batch operation for combining PDF files.
  *
  * @param FedoraObject $object
  *   The object to store the PDF file.
@@ -219,7 +219,7 @@ function islandora_book_create_ocr_batch(FedoraObject $object, array $pages, arr
     'title' => t('Creating PDF from @label', array('@label' => $object->label)),
     'init_message' => t('Preparing to create PDF from @label.', array('@label' => $object->label)),
     'progress_message' => t('Time elapsed: @elapsed <br/>Estimated time remaning @estimate.'),
-    'error_message' => t('An error has occured.'),
+    'error_message' => t('An error has occurred.'),
     'file' => drupal_get_path('module', 'islandora_book') . '/includes/book.batch.inc',
   );
 }
@@ -311,10 +311,10 @@ function islandora_book_sequence_pages_batch(FedoraObject $object, array $pages)
       array('islandora_book_sequence_pages_batch_operation', array($pages))
     ),
     'finished' => 'islandora_book_batch_finished',
-    'title' => t('Sequenceing @label\'s pages', array('@label' => $object->label)),
+    'title' => t('Sequencing @label\'s pages', array('@label' => $object->label)),
     'init_message' => t('Preparing to sequence @label\'s pages.', array('@label' => $object->label)),
     'progress_message' => t('Updated @current out of @total.'),
-    'error_message' => t('An error has occured.'),
+    'error_message' => t('An error has occurred.'),
     'file' => drupal_get_path('module', 'islandora_book') . '/includes/book.batch.inc',
   );
 }
